@@ -15,12 +15,11 @@ router.get('/', async (req, res) => {
       }, {
         model: Tag,
         as: 'product_tag'
-      }
       }]
     });
   } catch (err) {
     res.status(500).json(err);
-  });
+  };
 
 // get one product
 router.get('/:id', async (req, res) => {
@@ -34,7 +33,6 @@ router.get('/:id', async (req, res) => {
       }, {
         model: Tag,
         as: 'product_tag'
-      }
       }]
     })
     
@@ -45,7 +43,7 @@ router.get('/:id', async (req, res) => {
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
-  });
+  };
 
 // create new product
 router.post('/', (req, res) => {
