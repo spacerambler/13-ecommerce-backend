@@ -49,14 +49,6 @@ Product.init(
         unique: false,
       }
     }
-    productTag_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        mode: 'productTag'
-        key: 'id',
-        unique: false,
-      }
-    }
   },
   {
     sequelize,
