@@ -10,16 +10,14 @@ router.get('/', async (req, res) => {
   try {
     const productData = await Product.findAll({
       include: [{
-        model: Category, 
-        as: 'product_category' 
-      }, {
-        model: Tag,
-        as: 'product_tag'
+        model: Category,
+        attributes: ['category_name']
       }]
     });
   } catch (err) {
     res.status(500).json(err);
-  };
+  }
+});
 
 // get one product
 router.get('/:id', async (req, res) => {
@@ -44,6 +42,7 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   };
+});
 
 // create new product
 router.post('/', (req, res) => {
